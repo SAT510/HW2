@@ -4,3 +4,8 @@ The commmits include some practice execises given in HW2 description along with 
 "debugging.py" and "debugging.log" and "partial_debugging.log" are the files given as part of description of HW2. 
 
 "hw2_debugging.py" and "rand.py" are the files uploaded from zip folder, these are files on which static analysis tools are to be run. 
+
+![Linux Badge](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+![Python Badge](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![GitHub License](https://img.shields.io/github/license/SAT510/SAT-Repo)
+![Testing Badge](https://github.com/SAT510/SAT-Repo/actions/workflows/python-app.yml/badge.svg)
