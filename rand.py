@@ -6,13 +6,13 @@ import secrets
 
 def random_array(arr):
     """
-    Replace each element in the array with a random number between 1 and 20.
+    Replace a given array element with a random integer falling between 1 and 20.
     
     Args:
-        arr (list): The input array to be filled with random numbers.
+        arr (list): The list where we are filling with random integers between 1 and 20.
     
     Returns:
-        list: The modified array with random numbers.
+        list: The new array with integers (random) between 1 and 20.
     """
     for i, _ in enumerate(arr):
         arr[i] = secrets.randbelow(20) + 1
