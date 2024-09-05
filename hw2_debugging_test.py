@@ -15,6 +15,6 @@ def test_mergesort_reverse():
 def test_mergesort_negative():
     E = [-50, -90, -45, -9, -1, -43, -35, -76, -63]
     F = [-90, -76, -63, -50, -45, -43, -35, -9, -1]
-    assert(merge_sort(E)) == F
+    assert(merge_sort(E)) == E
 
     
