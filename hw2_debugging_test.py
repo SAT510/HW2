@@ -8,13 +8,13 @@ def test_mergesort_random():
     assert(merge_sort(A)) == B
 
 def test_mergesort_reverse():
-    A = [100, 45, 23, 21, 20, 15, 9, 5, 2, 1]
-    B = [1, 2, 5, 9, 15, 20, 21, 23, 45, 100]
-    assert(merge_sort(A)) == B
+    C = [100, 45, 23, 21, 20, 15, 9, 5, 2, 1]
+    D = [1, 2, 5, 9, 15, 20, 21, 23, 45, 100]
+    assert(merge_sort(C)) == D
 
 def test_mergesort_negative():
-    A = [-50, -90, -45, -9, -1, -43, -35, -76, -63]
-    B = [-90, -76, -63, -50, -45, -43, -35, -9, -1]
-    assert(merge_sort(A)) == B
+    E = [-50, -90, -45, -9, -1, -43, -35, -76, -63]
+    F = [-90, -76, -63, -50, -45, -43, -35, -9, -1]
+    assert(merge_sort(E)) == F
 
     
