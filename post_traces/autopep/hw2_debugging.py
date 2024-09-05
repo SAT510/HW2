@@ -5,12 +5,12 @@ def mergeSort(arr):
     if (len(arr) == 1):
         return arr
 
-    half = len(arr)//2
-
+    half = len(arr) // 2
     return recombine(mergeSort(arr[:half]), mergeSort(arr[half:]))
 
 
 def recombine(leftArr, rightArr):
+
     leftIndex = 0
     rightIndex = 0
     mergeArr = [None] * (len(leftArr) + len(rightArr))
@@ -32,6 +32,7 @@ def recombine(leftArr, rightArr):
 
 
 arr = rand.random_array([None] * 20)
+
 arr_out = mergeSort(arr)
 
 print(arr_out)
