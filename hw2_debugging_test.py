@@ -12,4 +12,9 @@ def test_mergesort_reverse():
     B = [1, 2, 5, 9, 15, 20, 21, 23, 45, 100]
     assert(merge_sort(A)) == B
 
+def test_mergesort_negative():
+    A = [-50, -90, -45, -9, -1, -43, -35, -76, -63]
+    B = [-90, -76, -63, -50, -45, -43, -35, -9, -1]
+    assert(merge_sort(A)) == B
+
     
