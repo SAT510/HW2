@@ -40,10 +40,10 @@ jobs:
        pip install pylint
        pylint $(git ls-files '*.py') > logs/pylint/latest_pylint.log
 
-    # - name: bandit
-    #   run: |
-    #     pip install bandit 
-    #     bandit -r . > logs/bandit/latest_bandit.log
+    - name: bandit
+      run: |
+        pip install bandit 
+        bandit -r . > logs/bandit/tmp.log
 
     - name: Commit changes made by autopep8
       run: |
