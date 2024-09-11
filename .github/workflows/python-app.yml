@@ -33,7 +33,7 @@ jobs:
     - name: Autopep8
       run: | 
        pip install autopep8
-        autopep8 --in-place --aggressive --aggressive --recursive .
+       autopep8 --in-place --aggressive --aggressive --recursive .
 
     - name: Commit changes made by autopep8
       run: |
@@ -43,6 +43,7 @@ jobs:
        git commit -m "Apply autopep8" || echo "No autopep8 changes"
        git push
     
-    - name: Run pylint
+    - name: pylint
       run: | 
+       pip install pylint
        pylint $(git ls-files '*.py')
