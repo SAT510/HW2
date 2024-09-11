@@ -22,7 +22,7 @@ jobs:
     - name: Set up Python 3.10
       uses: actions/setup-python@v3
       with:
-        python-version: "3.10"
+        python-version: "3.12.1"
     - name: Install dependencies
       run: |
         pip install pytest
@@ -44,6 +44,8 @@ jobs:
       run: |
         pip install bandit 
         bandit hw2_debugging_test.py > logs/bandit/latest_bandit.log
+        bandit hw2_debugging.py >> logs/bandit/latest_bandit.log
+        bandit rand.py >> logs/bandit/latest_bandit.log
 
     - name: Commit changes made by autopep8
       run: |
