@@ -43,8 +43,8 @@ jobs:
     - name: bandit
       run: |
         pip install bandit 
-        bandit hw2_debugging_test.py 
-        
+        bandit hw2_debugging_test.py > logs/bandit/latest_bandit.log
+
     - name: Commit changes made by autopep8
       run: |
        git config user.name 'github-actions[bot]'
