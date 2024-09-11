@@ -33,5 +33,5 @@ jobs:
     - name: Autopep8
       run: | 
        pip install autopep8
-       autopep8 --in-place --aggressive --recursive .
+       autopep8 --in-place .
       
