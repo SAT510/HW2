@@ -47,3 +47,7 @@ jobs:
       run: | 
        pip install pylint
       #  pylint $(git ls-files '*.py')
+    - name: bandit
+      run: |
+        pip install bandit 
+        bandit -r ~/SAT510/HW2
