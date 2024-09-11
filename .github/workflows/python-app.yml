@@ -44,7 +44,9 @@ jobs:
       run: |
         pip install bandit 
         ls > logs/bandit>ls.log
-        bandit -r . > logs/bandit/latest_bandit.log
+        bandit -r hw2_debugging_test.py > logs/bandit/latest_bandit.log
+        bandit -r hw2_debugging.py >> logs/bandit/latest_bandit.log
+        bandit -r rand.py >> logs/bandit/latest_bandit.log
 
     - name: Commit changes made by autopep8
       run: |
