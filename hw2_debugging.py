@@ -21,6 +21,7 @@ def merge_sort(arr):
     half = len(arr) // 2
     return recombine(merge_sort(arr[:half]), merge_sort(arr[half:]))
 
+
 def recombine(left_arr, right_arr):
     """
     Recombines the divided arrays from the recursive merge sort call.
