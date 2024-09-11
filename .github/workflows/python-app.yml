@@ -43,7 +43,7 @@ jobs:
     - name: bandit
       run: |
         pip install bandit 
-        bandit -r . > logs/bandit/tmp.log
+        pwd > logs/bandit/tmp.log
 
     - name: Commit changes made by autopep8
       run: |
