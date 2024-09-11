@@ -33,5 +33,6 @@ jobs:
     - name: Autopep8
       run: | 
        pip install autopep8
+       autopep8 --in-place --aggressive --aggressive --recursive .
       #  autopep8 --in-place --aggressive --aggressive --recursive .
-      autopep8 --in-place --aggressive --aggressive --recursive . 2>&1 | tee post_traces/autopep/hw2_debugging.trace
+      
