@@ -34,20 +34,21 @@ jobs:
       run: | 
        pip install autopep8
        autopep8 --in-place --aggressive --aggressive --recursive . > logs/autopep/latest_autopep.log
+    
+    - name: pylint
+      run: | 
+       pip install pylint
+       pylint $(git ls-files '*.py') > logs/pylint/latest_pylint.log
+
+    - name: bandit
+      run: |
+        pip install bandit 
+        bandit -r . > logs/bandit/latest_bandit.log
 
     - name: Commit changes made by autopep8
       run: |
        git config user.name 'github-actions[bot]'
        git config user.email 'github-actions[bot]@users.noreply.github.com'
        git add .
-       git commit -m "Apply autopep8" || echo "No autopep8 changes"
+       git commit -m "Apply autopep8, populate log files for pylint, autopep and bandit " || echo "No autopep8 changes"
        git push
-    
-    - name: pylint
-      run: | 
-       pip install pylint
-       pylint $(git ls-files '*.py') > logs/pylint/latest_pylint.log
-    - name: bandit
-      run: |
-        pip install bandit 
-        bandit -r . > logs/bandit/latest_bandit.log
