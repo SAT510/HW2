@@ -8,10 +8,10 @@ import rand
 def merge_sort(arr):
     """
     Recursive function to perform the main logic for merge sort.
-    
+
     Args:
         arr (list): The list of integers to be sorted.
-    
+
     Returns:
         list: The sorted list.
     """
@@ -25,18 +25,19 @@ def merge_sort(arr):
 def recombine(left_arr, right_arr):
     """
     Recombines the divided arrays from the recursive merge sort call.
-    
+
     Args:
         left_arr (list): The left half of the array.
         right_arr (list): The right half of the array.
-    
+
     Returns:
         list: The recombined and sorted array.
     """
 
     left_index = 0
     right_index = 0
-    merge_arr = [None] * (len(left_arr) + len(right_arr))  # Keep the merge_arr initialization
+    # Keep the merge_arr initialization
+    merge_arr = [None] * (len(left_arr) + len(right_arr))
 
     while left_index < len(left_arr) and right_index < len(right_arr):
         if left_arr[left_index] < right_arr[right_index]:
