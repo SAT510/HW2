@@ -9,5 +9,6 @@ The commmits include some practice execises given in HW2 description along with 
 ![Python Badge](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![GitHub License](https://img.shields.io/github/license/SAT510/SAT-Repo)
 ![Testing Badge](https://github.com/SAT510/HW2/actions/workflows/python-app.yml/badge.svg)
-![AutoPep8](https://img.shields.io/badge/code%20style-autopep8-yellow.svg)(https://github.com/SAT510/HW2/blob/main/post_traces/autopep/hw2_debugging.trace)
+![AutoPep8](https://img.shields.io/badge/code%20style-autopep8-yellow.svg)
+[![Generic Badge](https://img.shields.io/badge/example-badge-blue.svg)](https://github.com/username/repository/blob/main/file.py)
 ![security: bandit](https://img.shields.io/badge/security-bandit-blue.svg)
