@@ -33,7 +33,7 @@ jobs:
     - name: Autopep8
       run: | 
        pip install autopep8
-       autopep8 --in-place --aggressive --aggressive --recursive .
+       autopep8 --in-place --aggressive --aggressive --recursive . > logs/autopep/latest_autopep.log
 
     - name: Commit changes made by autopep8
       run: |
@@ -46,8 +46,8 @@ jobs:
     - name: pylint
       run: | 
        pip install pylint
-       pylint $(git ls-files '*.py')
+       pylint $(git ls-files '*.py') > logs/pylint/latest_pylint.log
     - name: bandit
       run: |
         pip install bandit 
-        bandit -r ~/SAT510/HW2
+        bandit -r . > logs/bandit/latest_bandit.log
