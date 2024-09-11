@@ -10,5 +10,5 @@ The commmits include some practice execises given in HW2 description along with 
 ![GitHub License](https://img.shields.io/github/license/SAT510/SAT-Repo)
 ![Testing Badge](https://github.com/SAT510/HW2/actions/workflows/python-app.yml/badge.svg)
 ![AutoPep8](https://img.shields.io/badge/code%20style-autopep8-yellow.svg)
-[![Generic Badge](https://img.shields.io/badge/example-badge-blue.svg)](https://github.com/username/repository/blob/main/file.py)
+[![Generic Badge](https://img.shields.io/badge/example-badge-blue.svg)](https://github.com/SAT510/HW2/tree/main/post_traces/autopep)
 ![security: bandit](https://img.shields.io/badge/security-bandit-blue.svg)
