@@ -28,7 +28,7 @@ jobs:
         pip install pytest
     - name: Test with pytest
       run: |
-       pip install pytest pytest-cov autopep8
+       pip install pytest pytest-cov
        pytest
     - name: Autopep8
       run: | 
