@@ -37,8 +37,12 @@ jobs:
 
     - name: Commit changes made by autopep8
       run: |
-        git config user.name 'github-actions[bot]'
-        git config user.email 'github-actions[bot]@users.noreply.github.com'
-        git add .
-        git commit -m "Apply autopep8" || echo "No autopep8 changes"
-        git push
+       git config user.name 'github-actions[bot]'
+       git config user.email 'github-actions[bot]@users.noreply.github.com'
+       git add .
+       git commit -m "Apply autopep8" || echo "No autopep8 changes"
+       git push
+    
+    - name: Run pylint
+      run: | 
+       pylint $(git ls-files '*.py')
