@@ -41,14 +41,12 @@ jobs:
       run: | 
        pip install pylint
        pylint $(git ls-files '*.py') 2>&1 | tee logs/pylint/latest_pylint.log
-       grep -q "rated at 10" logs/pylint/latest_pylint.log || exit 1  # Fail the job if pylint has issues
       continue-on-error: false
 
     - name: bandit
       run: |
         pip install bandit 
         bandit -r . 2>&1 | tee logs/bandit/latest_bandit.log
-        grep -q "No issues identified" logs/bandit/latest_bandit.log || exit 1
       continue-on-error: false
 
     - name: Commit changes made by autopep8
@@ -58,3 +56,5 @@ jobs:
        git add .
        git commit -m "Apply autopep8, populate log files for pylint, autopep and bandit " || echo "No autopep8 changes"
        git push
+       grep -q "rated at 10" logs/pylint/latest_pylint.log || exit 1  # Fail the job if pylint has issues
+       grep -q "No issues identified" logs/bandit/latest_bandit.log || exit 1
