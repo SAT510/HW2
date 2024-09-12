@@ -39,7 +39,7 @@ jobs:
     - name: pylint
       run: | 
        pip install pylint
-       pylint $(git ls-files '*.py') > logs/pylint/latest_pylint.log 2>&1 || true
+       pylint $(git ls-files '*.py') > logs/pylint/latest_pylint.log 2>&1
 
     - name: bandit
       run: |
