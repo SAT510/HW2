@@ -43,11 +43,11 @@ jobs:
        pylint $(git ls-files '*.py') 2>&1 | tee logs/pylint/latest_pylint.log
       continue-on-error: false
 
-    # - name: bandit
-    #   run: |
-    #     pip install bandit 
-    #     bandit -r . 2>&1 | tee logs/bandit/latest_bandit.log
-    #   continue-on-error: false
+    - name: bandit
+      run: |
+        pip install bandit 
+        bandit -r . 2>&1 | tee logs/bandit/latest_bandit.log
+      continue-on-error: false
 
     - name: Commit changes made by autopep8
       run: |
