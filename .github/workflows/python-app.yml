@@ -37,11 +37,11 @@ jobs:
        autopep8 --in-place --aggressive --aggressive --recursive . > logs/autopep/latest_autopep.log
       continue-on-error: false
     
-    # - name: pylint
-    #   run: | 
-    #    pip install pylint
-    #    pylint $(git ls-files '*.py') 2>&1 | tee logs/pylint/latest_pylint.log
-    #   continue-on-error: false
+    - name: pylint
+      run: | 
+       pip install pylint
+       pylint $(git ls-files '*.py') 2>&1 | tee logs/pylint/latest_pylint.log
+      continue-on-error: false
 
     # - name: bandit
     #   run: |
