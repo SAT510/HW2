@@ -36,7 +36,7 @@ jobs:
        pip install autopep8
        autopep8 --in-place --aggressive --aggressive --recursive . > logs/autopep/latest_autopep.log
        if [ $? -eq 0 ]; then
-          cho "Autopep8 passed successfully." >> logs/autopep/latest_autopep.log
+          echo "Autopep8 passed successfully." >> logs/autopep/latest_autopep.log
        else
           echo "Autopep8 encountered issues." >> logs/autopep/latest_autopep.log
        fi
