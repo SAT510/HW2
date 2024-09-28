@@ -11,7 +11,7 @@ def test_mergesort_random():
     """
     a = [89, 67, 23, 12, 45, 100]
     b = [12, 23, 45, 67, 89, 100]
-    result = merge_sort(b)
+    result = merge_sort(a)
     if result != b:
         raise ValueError(f"Expected {b}, but got {result}")
 
@@ -22,7 +22,7 @@ def test_mergesort_reverse():
     """
     c = [100, 45, 23, 21, 20, 15, 9, 5, 2, 1]
     d = [1, 2, 5, 9, 15, 20, 21, 23, 45, 100]
-    result = merge_sort(d)
+    result = merge_sort(c)
     if result != d:
         raise ValueError(f"Expected {d}, but got {result}")
 
