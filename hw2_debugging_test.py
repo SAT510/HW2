@@ -27,7 +27,6 @@ def test_mergesort_reverse():
         raise ValueError(f"Expected {d}, but got {result}")
 
 
-
 def test_mergesort_negative():
     """
     Test 3 for mergesort
