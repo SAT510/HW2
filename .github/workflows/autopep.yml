@@ -1,0 +1,46 @@
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+
+name: Python application
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python 3.12
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.12.1"
+    
+    - name: Autopep8
+      run: | 
+       pip install autopep8
+       autopep8 --in-place --aggressive --aggressive --recursive . > logs/autopep/latest_autopep.log
+       if [ $? -eq 0 ]; then
+          echo "Autopep8 passed successfully." >> logs/autopep/latest_autopep.log
+       else
+          echo "Autopep8 encountered issues." >> logs/autopep/latest_autopep.log
+       fi
+      continue-on-error: false
+    
+    - name: Commit changes made by autopep8
+      run: |
+       git config user.name 'github-actions[bot]'
+       git config user.email 'github-actions[bot]@users.noreply.github.com'
+       git add .
+       git commit -m "Apply autopep8, populate log files for pylint, autopep and bandit " || echo "No autopep8 changes"
+       git push
+      
+
