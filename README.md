@@ -15,5 +15,6 @@ The commmits include some practice execises given in HW2 description along with 
 
 ![Autopep8 Status](https://github.com/SAT510/HW2/actions/workflows/autopep.yml/badge.svg)
 ![Bandit-Status](https://github.com/SAT510/HW2/actions/workflows/bandit.yml/badge.svg)
+![Pylint-Status](https://github.com/SAT510/HW2/actions/workflows/pylint.yml/badge.svg)
 
 
