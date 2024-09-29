@@ -1,7 +1,3 @@
-"""
-Performstesting of merge sort
-"""
-
 from hw2_debugging import merge_sort
 
 
