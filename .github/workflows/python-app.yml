@@ -62,26 +62,26 @@ jobs:
        git commit -m "Apply autopep8, populate log files for pylint, autopep and bandit " || echo "No autopep8 changes"
        git push
        
-     - name: Update Badge URL
-       run: |
-        STATUS="${{ steps.badge_status.outputs.status }}"
-        if [ "$STATUS" == "success" ]; then
-          echo "[![Bandit Status](https://img.shields.io/badge/Bandit_Status-success-brightgreen)](https://github.com/SAT510/HW2/actions/workflows/python-app.yml)" > badge_url.txt
-        else
-          echo "[![Bandit Status](https://img.shields.io/badge/Bandit_Status-failure-red)](https://github.com/SAT510/HW2/actions/workflows/python-app.yml)" > badge_url.txt
-        fi
+    #  - name: Update Badge URL
+    #    run: |
+    #     STATUS="${{ steps.badge_status.outputs.status }}"
+    #     if [ "$STATUS" == "success" ]; then
+    #       echo "[![Bandit Status](https://img.shields.io/badge/Bandit_Status-success-brightgreen)](https://github.com/SAT510/HW2/actions/workflows/python-app.yml)" > badge_url.txt
+    #     else
+    #       echo "[![Bandit Status](https://img.shields.io/badge/Bandit_Status-failure-red)](https://github.com/SAT510/HW2/actions/workflows/python-app.yml)" > badge_url.txt
+    #     fi
 
-    - name: Commit Badge Update
-      run: |
-        git config user.name 'github-actions[bot]'
-        git config user.email 'github-actions[bot]@users.noreply.github.com'
-        git add badge_url.txt
-        git commit -m "Update Bandit badge" || echo "No changes to commit"
-        git push
+    # - name: Commit Badge Update
+    #   run: |
+    #     git config user.name 'github-actions[bot]'
+    #     git config user.email 'github-actions[bot]@users.noreply.github.com'
+    #     git add badge_url.txt
+    #     git commit -m "Update Bandit badge" || echo "No changes to commit"
+    #     git push
 
-    - name: Update README with Badge
-      run: |
-        echo "[![Bandit Status](https://img.shields.io/badge/Bandit_Status-${{ steps.badge_status.outputs.status }}-${{ steps.badge_status.outputs.status == 'success' && 'brightgreen' || 'red' }})](https://github.com/SAT510/HW2/actions/workflows/python-app.yml)" > README.m
+    # - name: Update README with Badge
+    #   run: |
+    #     echo "[![Bandit Status](https://img.shields.io/badge/Bandit_Status-${{ steps.badge_status.outputs.status }}-${{ steps.badge_status.outputs.status == 'success' && 'brightgreen' || 'red' }})](https://github.com/SAT510/HW2/actions/workflows/python-app.yml)" > README.m
 
 
 # grep -q "rated at 10" logs/pylint/latest_pylint.log || exit 1
