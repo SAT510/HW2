@@ -33,7 +33,7 @@ def test_mergesort_negative():
     """
     e = [-50, -90, -45, -9, -1, -43, -35, -76, -63]
     f = [-90, -76, -63, -50, -45, -43, -35, -9, -1]
-    assert (merge_sort(e)) == f
-    # result = merge_sort(e)
-    # if result != f:
-    #     raise ValueError(f"Expected {f}, but got {result}")
+    # assert (merge_sort(e)) == f
+    result = merge_sort(e)
+    if result != f:
+        raise ValueError(f"Expected {f}, but got {result}")

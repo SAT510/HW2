@@ -26,18 +26,4 @@ jobs:
 
     - name: Run Bandit
       run: |
-        bandit -r . > logs/bandit/latest_bandit.log
-        if grep -q "No issues identified" logs/bandit/latest_bandit.log; then
-          echo "Bandit Status: success" > badge_status.txt
-        else
-          echo "Bandit Status: failure" > badge_status.txt
-          exit 1
-        fi
-
-    - name: Commit Badge Update
-      run: |
-        git config user.name 'github-actions[bot]'
-        git config user.email 'github-actions[bot]@users.noreply.github.com'
-        git add badge_status.txt
-        git commit -m "Update Bandit badge" || echo "No changes to commit"
-        git push
+        bandit -r .
