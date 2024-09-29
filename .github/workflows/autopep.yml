@@ -1,7 +1,4 @@
-# This workflow will install Python dependencies, run tests and lint with a single version of Python
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
-
-name: Autopep
+name: Autopep8 Check
 
 on:
   push:
@@ -13,7 +10,7 @@ permissions:
   contents: write
 
 jobs:
-  build:
+  autopep:
 
     runs-on: ubuntu-latest
 
@@ -23,10 +20,19 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: "3.12.1"
-    
-     - name: Run Autopep8
+
+    - name: Install Autopep8
+      run: pip install autopep8
+
+    - name: Run Autopep8
       run: |
-        autopep8 --in-place --aggressive --aggressive --recursive . 
+        autopep8 --in-place --aggressive --aggressive --recursive . > logs/autopep/latest_autopep.log
+        if grep -q "no changes made" logs/autopep/latest_autopep.log; then
+          echo "Autopep8 Status: success" > badge_status.txt
+        else
+          echo "Autopep8 Status: failure" > badge_status.txt
+          exit 1
+        fi
 
     - name: Commit Badge Update
       run: |
