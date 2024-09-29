@@ -62,14 +62,14 @@ jobs:
        git commit -m "Apply autopep8, populate log files for pylint, autopep and bandit " || echo "No autopep8 changes"
        git push
        
-    #  - name: Update Badge URL
-    #    run: |
-    #     STATUS="${{ steps.badge_status.outputs.status }}"
-    #     if [ "$STATUS" == "success" ]; then
-    #       echo "[![Bandit Status](https://img.shields.io/badge/Bandit_Status-success-brightgreen)](https://github.com/SAT510/HW2/actions/workflows/python-app.yml)" > badge_url.txt
-    #     else
-    #       echo "[![Bandit Status](https://img.shields.io/badge/Bandit_Status-failure-red)](https://github.com/SAT510/HW2/actions/workflows/python-app.yml)" > badge_url.txt
-    #     fi
+     - name: Update Badge URL
+       run: |
+        STATUS="${{ steps.badge_status.outputs.status }}"
+        if [ "$STATUS" == "success" ]; then
+          echo "[![Bandit Status](https://img.shields.io/badge/Bandit_Status-success-brightgreen)](https://github.com/SAT510/HW2/actions/workflows/python-app.yml)" > badge_url.txt
+        else
+          echo "[![Bandit Status](https://img.shields.io/badge/Bandit_Status-failure-red)](https://github.com/SAT510/HW2/actions/workflows/python-app.yml)" > badge_url.txt
+        fi
 
     # - name: Commit Badge Update
     #   run: |
