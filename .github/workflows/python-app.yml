@@ -61,23 +61,14 @@ jobs:
        git add .
        git commit -m "Apply autopep8, populate log files for pylint, autopep and bandit " || echo "No autopep8 changes"
        git push
-    
-    - name: Set Bandit Badge Status
-      id: badge_status
-      run: |
-        if grep -q "No issues identified" logs/bandit/latest_bandit.log; then
-          echo "::set-output name=status::success"
-        else
-          echo "::set-output name=status::failure"
-        fi
-
-    - name: Update Badge URL
+       
+     - name: Update Badge URL
       run: |
         STATUS="${{ steps.badge_status.outputs.status }}"
         if [ "$STATUS" == "success" ]; then
-          echo "![Bandit Status](https://img.shields.io/badge/Bandit_Status-success-brightgreen)" > badge_url.txt
+          echo "[![Bandit Status](https://img.shields.io/badge/Bandit_Status-success-brightgreen)](https://github.com/SAT510/HW2/actions/workflows/python-app.yml)" > badge_url.txt
         else
-          echo "![Bandit Status](https://img.shields.io/badge/Bandit_Status-failure-red)" > badge_url.txt
+          echo "[![Bandit Status](https://img.shields.io/badge/Bandit_Status-failure-red)](https://github.com/SAT510/HW2/actions/workflows/python-app.yml)" > badge_url.txt
         fi
 
     - name: Commit Badge Update
@@ -88,9 +79,9 @@ jobs:
         git commit -m "Update Bandit badge" || echo "No changes to commit"
         git push
 
-    - name: Display Badge in README
+    - name: Update README with Badge
       run: |
-        echo "![Bandit Status](https://img.shields.io/badge/Bandit_Status-${{ steps.badge_status.outputs.status }}-${{ steps.badge_status.outputs.status == 'success' && 'brightgreen' || 'red' }})" > README.md
+        echo "[![Bandit Status](https://img.shields.io/badge/Bandit_Status-${{ steps.badge_status.outputs.status }}-${{ steps.badge_status.outputs.status == 'success' && 'brightgreen' || 'red' }})](https://github.com/SAT510/HW2/actions/workflows/python-app.yml)" > README.m
 
 # grep -q "rated at 10" logs/pylint/latest_pylint.log || exit 1
 #        grep -q "No issues identified" logs/bandit/latest_bandit.log || exit 1
