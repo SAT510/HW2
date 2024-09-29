@@ -63,7 +63,7 @@ jobs:
        git push
     
     - name: Set Bandit Badge Status
-    run: |
+      run: |
         if grep -q "No issues identified" logs/bandit/latest_bandit.log; then
           echo "Bandit-Status: success" > badge_status.txt
         else
