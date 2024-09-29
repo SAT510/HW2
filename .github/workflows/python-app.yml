@@ -83,5 +83,6 @@ jobs:
       run: |
         echo "[![Bandit Status](https://img.shields.io/badge/Bandit_Status-${{ steps.badge_status.outputs.status }}-${{ steps.badge_status.outputs.status == 'success' && 'brightgreen' || 'red' }})](https://github.com/SAT510/HW2/actions/workflows/python-app.yml)" > README.m
 
+
 # grep -q "rated at 10" logs/pylint/latest_pylint.log || exit 1
 #        grep -q "No issues identified" logs/bandit/latest_bandit.log || exit 1
