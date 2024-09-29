@@ -31,37 +31,4 @@ jobs:
       run: |
        pip install pytest pytest-cov
        pytest
-    - name: Autopep8
-      run: | 
-       pip install autopep8
-       autopep8 --in-place --aggressive --aggressive --recursive . > logs/autopep/latest_autopep.log
-       if [ $? -eq 0 ]; then
-          echo "Autopep8 passed successfully." >> logs/autopep/latest_autopep.log
-       else
-          echo "Autopep8 encountered issues." >> logs/autopep/latest_autopep.log
-       fi
-      continue-on-error: false
-    
-    - name: pylint
-      run: | 
-       pip install pylint
-       pylint $(git ls-files '*.py') 2>&1 | tee logs/pylint/latest_pylint.log
-      continue-on-error: false
-
-    - name: bandit
-      run: |
-        pip install bandit 
-        bandit -r . 2>&1 | tee logs/bandit/latest_bandit.log
-      continue-on-error: false
-
-    - name: Commit changes made by autopep8
-      run: |
-       git config user.name 'github-actions[bot]'
-       git config user.email 'github-actions[bot]@users.noreply.github.com'
-       git add .
-       git commit -m "Apply autopep8, populate log files for pylint, autopep and bandit " || echo "No autopep8 changes"
-       git push
-      
-
-# grep -q "rated at 10" logs/pylint/latest_pylint.log || exit 1
-#        grep -q "No issues identified" logs/bandit/latest_bandit.log || exit 1
+       
