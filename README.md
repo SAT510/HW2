@@ -13,6 +13,7 @@ The commmits include some practice execises given in HW2 description along with 
 [![Security: bandit](https://img.shields.io/badge/security-bandit-blue.svg)](https://github.com/SAT510/HW2/tree/main/logs/bandit/latest_bandit.log)
 [![Pylint](https://img.shields.io/badge/code%20quality-pylint-green.svg)](https://github.com/SAT510/HW2/tree/main/logs/pylint/latest_pylint.log) 
 
-![AutoPep-Status](https://github.com/SAT510/HW2/actions/workflows/autopep.yml/badge.svg)
+![Autopep8 Status](https://github.com/SAT510/HW2/actions/workflows/autopep.yml/badge.svg)
+![Bandit-Status](https://github.com/SAT510/HW2/actions/workflows/bandit.yml/badge.svg)
 
 
