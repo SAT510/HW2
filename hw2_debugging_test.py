@@ -14,7 +14,7 @@ def test_mergesort_random():
     result = merge_sort(a)
     if result != b:
         # raise ValueError(f"Expected {b}, but got {result}")
-        assert result == a;
+        assert result == a
 
 
 def test_mergesort_reverse():
