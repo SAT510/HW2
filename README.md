@@ -8,7 +8,7 @@ The commmits include some practice execises given in HW2 description along with 
 ![Linux Badge](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 ![Python Badge](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![GitHub License](https://img.shields.io/github/license/SAT510/SAT-Repo)
-[![Python application - Test Badge](https://github.com/SAT510/HW2/actions/workflows/python-app.yml/badge.svg)](https://github.com/SAT510/HW2/actions/workflows/python-app.yml)
+[![Python application - Testing](https://github.com/SAT510/HW2/actions/workflows/pytest.yml/badge.svg)](https://github.com/SAT510/HW2/actions/workflows/pytest.yml)
 
 [![Autopep8 Check](https://github.com/SAT510/HW2/actions/workflows/autopep.yml/badge.svg)](https://github.com/SAT510/HW2/actions/workflows/autopep.yml)
 
