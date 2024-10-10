@@ -1,6 +1,6 @@
-"""
-Performs merge sort on an array
-"""
+# """
+# Performs merge sort on an array
+# """
 
 import rand
 
