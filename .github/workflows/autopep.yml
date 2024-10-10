@@ -26,8 +26,7 @@ jobs:
 
     - name: Run Autopep8
       run: |
-        autopep8 --in-place --aggressive --aggressive --recursive . > logs/autopep/latest_autopep.log
-# --in-place --aggressive --aggressive --recursive .
+        autopep8 --in-place --aggressive --aggressive --recursive . 
 
     - name: Commit changes made by autopep8
       run: |

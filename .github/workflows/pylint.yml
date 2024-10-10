@@ -24,7 +24,6 @@ jobs:
     - name: pylint
       run: | 
        pip install pylint
-       pylint $(git ls-files '*.py') 2>&1 | tee logs/pylint/latest_pylint.log
-      continue-on-error: false
+       pylint $(git ls-files '*.py') 
 
        

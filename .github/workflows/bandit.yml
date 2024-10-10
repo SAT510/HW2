@@ -26,5 +26,5 @@ jobs:
 
     - name: Run Bandit
       run: |
-        bandit -r . 2>&1 | tee logs/bandit/latest_bandit.log
+        bandit -r .
         
