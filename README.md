@@ -17,4 +17,5 @@ The commmits include some practice execises given in HW2 description along with 
 ![Bandit-Status](https://github.com/SAT510/HW2/actions/workflows/bandit.yml/badge.svg)
 ![Pylint-Status](https://github.com/SAT510/HW2/actions/workflows/pylint.yml/badge.svg)
 
+[![Bandit Analysis](https://github.com/SAT510/HW2/actions/workflows/bandit.yml/badge.svg)](https://github.com/SAT510/HW2/actions/workflows/bandit.yml)
 
